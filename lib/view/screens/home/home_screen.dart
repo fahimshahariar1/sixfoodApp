@@ -7,6 +7,7 @@ import 'package:sixamfoodapp/util/images.dart';
 import 'package:sixamfoodapp/util/styles.dart';
 import 'package:sixamfoodapp/view/screens/home/widget/banner_widget.dart';
 import 'package:sixamfoodapp/view/screens/home/widget/category_view.dart';
+import 'package:sixamfoodapp/view/screens/home/widget/food_campaign.dart';
 import 'package:sixamfoodapp/view/screens/home/widget/popular_view.dart';
 
 
@@ -68,7 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
              const BannerView(),
              const CategoryView(),
-             const PopularFoodView(isPopular: true),
+             //const PopularFoodView(isPopular: true),
+            const FoodCampaign()
           ],
 
         ),

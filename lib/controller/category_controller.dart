@@ -9,11 +9,7 @@ class CategoryController extends GetxController implements GetxService {
 
   List<CategoryModel>? _categoryList;
 
-
-
-
   List<CategoryModel>? get categoryList => _categoryList;
-
 
   Future<void> getCategoryList (bool reload) async {
     if (_categoryList == null || reload) {
@@ -23,11 +19,10 @@ class CategoryController extends GetxController implements GetxService {
         response.body.forEach((category) {
           _categoryList!.add(CategoryModel.fromJson(category));
         });
-
-      }else {
+      } else {
         ApiChecker.checkApi(response);
       }
+      update(); // Notify listeners after updating the categoryList
     }
   }
-
 }

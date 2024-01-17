@@ -12,6 +12,7 @@ class AppConstants {
   static const bannerUri = "/api/v1/banners";
   static const String categoryUri = '/api/v1/categories';
   static const String popularProductUri = '/api/v1/products/popular';
+  static const String itemCampaignUri = '/api/v1/campaigns/item';
 
 
   //Key

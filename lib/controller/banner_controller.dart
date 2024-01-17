@@ -6,8 +6,8 @@ class BannerController extends GetxController implements GetxService {
   final BannerRepo bannerRepo;
   BannerController({required this.bannerRepo});
 
-   List<String?> _bannerImageList = [];
-   List<dynamic> _bannerDataList = [];
+   final List<String?> _bannerImageList = [];
+   final List<dynamic> _bannerDataList = [];
   int _currentIndex = 0;
 
   List<String?> get bannerImageList => _bannerImageList;
@@ -40,7 +40,6 @@ class BannerController extends GetxController implements GetxService {
                 .where((imageUrl) => imageUrl != null)
                 .cast<String?>() ?? []);
 
-// ...
             _bannerDataList.addAll(bannerModel.campaigns
                 ?.where((campaign) => campaign.image != null)
                 .toList() ?? []);
