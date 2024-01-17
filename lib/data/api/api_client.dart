@@ -1,18 +1,14 @@
 
-
-
 import 'dart:convert';
-
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/request/request.dart';
-import 'package:get/get_connect/http/src/response/response.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sixamfoodapp/data/model/address_model.dart';
+import 'package:sixamfoodapp/data/model/error_response.dart';
 import 'package:sixamfoodapp/util/app_constants.dart';
 import 'package:http/http.dart' as http;
 
-import '../model/error_response.dart';
 
 class ApiClient extends GetxService {
   late final String appBaseUrl;
@@ -21,7 +17,7 @@ class ApiClient extends GetxService {
   String? token;
   late Map<String, String> _mainHeaders;
 
-  ApiClient(this.sharedPreferences, {required this.appBaseUrl}){
+  ApiClient({required this.sharedPreferences, required this.appBaseUrl}){
     token = sharedPreferences.getString(AppConstants.token);
     if(kDebugMode){
       debugPrint('Token : $token');
@@ -55,7 +51,7 @@ class ApiClient extends GetxService {
   }
 
 
-  Future<Response?> getData(String uri, {Map<String, dynamic>? query, Map<String, String>? headers}) async {
+  Future <Response> getData(String uri, {Map<String, dynamic>? query, Map<String, String>? headers}) async {
     try {
       if (kDebugMode) {
         debugPrint('====> API Call: $uri\nHeader: $_mainHeaders');
@@ -70,7 +66,7 @@ class ApiClient extends GetxService {
         print('----------------${e.toString()}');
       }
 
-      throw e;
+      return const Response(statusCode: 1);
     }
   }
 

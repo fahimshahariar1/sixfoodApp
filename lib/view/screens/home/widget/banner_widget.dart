@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sixamfoodapp/controller/banner_controller.dart';
+import 'package:sixamfoodapp/util/app_constants.dart';
 import 'package:sixamfoodapp/util/dimensions.dart';
 
 class BannerView extends StatelessWidget {
@@ -10,7 +11,12 @@ class BannerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<BannerController>(builder: (bannerController) {
-      List<String?> bannerImageList = bannerController.bannerImageList ?? [];
+      List<String?>? bannerImageList = bannerController.bannerImageList;
+
+      if (bannerImageList.isEmpty) {
+
+        return Container();
+      }
 
       return SizedBox(
         height: 100,
@@ -28,7 +34,7 @@ class BannerView extends StatelessWidget {
 
             return ClipRRect(
               borderRadius: BorderRadius.circular(Dimensions.radiusSizeSmall),
-              child: Image.network('https://stackfood-admin.6amtech.com/storage/app/public/banner/$imagePath'),
+              child: Image.network(AppConstants.baseUrl),
             );
           },
           options: CarouselOptions(
@@ -50,3 +56,5 @@ class BannerView extends StatelessWidget {
     });
   }
 }
+
+

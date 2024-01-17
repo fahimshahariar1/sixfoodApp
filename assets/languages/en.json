@@ -1,5 +1,26 @@
 {
-  "user_address": "76A Eight Evenue New York, US"
+  "user_address" : "76A eight evenue, New York, US",
+  "search" : "Search food or restaurant here...",
+  "category" : "Categories",
+  "view" : "View All",
+  "popular" : "Popular Food Nearby",
+  "food" : "Food Campaign",
+  "restaurant" : "Restaurant",
+  "all" : "All",
+  "coffee" : "Coffee",
+  "drink" : "Drink",
+  "fastfood" : "Fast Food",
+  "cake" : "Cake",
+  "sushi" : "Sushi",
+  "restaurantName" : "Mc Donald",
+  "noodles" : "Fried Noodles",
+  "price" : " ",
+  "rate" : "4.9",
+  "burger" : "Burger",
+  "restaurantAddress" : "New York, USA",
+  "campaignPrice" : " ",
+  "discount" : "30% off",
+  "discoutPrice" : " "
 
 
 }

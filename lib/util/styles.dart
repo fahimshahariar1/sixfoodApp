@@ -5,7 +5,7 @@ import 'package:sixamfoodapp/util/dimensions.dart';
 
 
 
-  const rebotoBold = TextStyle(
+  const robotoBold = TextStyle(
     fontFamily: AppConstants.secondFontFamily,
     fontWeight: FontWeight.w700,
     fontSize: Dimensions.fontSizeDefault

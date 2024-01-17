@@ -8,7 +8,8 @@ class AppConstants {
 
   //API
   static const baseUrl = "https://stackfood-admin.6amtech.com";
-  static const bannerUri = "/api/v1/categories";
+  static const bannerUri = "/api/v1/banners";
+  static const String categoryUri = '/api/v1/categories';
 
 
   //Key
