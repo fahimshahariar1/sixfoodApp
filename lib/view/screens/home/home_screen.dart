@@ -65,8 +65,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
 
-             //BannerView()
-            //const CategoryView()
+             const BannerView(),
+             const CategoryView()
           ],
 
         ),

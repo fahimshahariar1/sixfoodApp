@@ -17,5 +17,6 @@ class Dimensions{
 
 
   static const double radiusSizeSmall = 10;
+  static const double radiusSizeDefault = 20;
 
 }
