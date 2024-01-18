@@ -6,18 +6,18 @@ import 'package:sixamfoodapp/data/repository/campaign_repo.dart';
 
 
 
-class CampaignController extends GetxController implements GetxService{
+class CampaignController extends GetxController implements GetxService {
   final CampaignRepo campaignRepo;
   CampaignController({required this.campaignRepo});
 
-
   List<BasicCampaignModel>? _basicCampaignList;
   BasicCampaignModel? _campaign;
-  List<Product>? itemCampaignList = [];
+  List<Product>? _itemCampaignList;
   int _currentIndex = 0;
 
   List<BasicCampaignModel>? get basicCampaignList => _basicCampaignList;
   BasicCampaignModel? get campaign => _campaign;
+  List<Product>? get itemCampaignList => _itemCampaignList;
   int get currentIndex => _currentIndex;
 
   void setCurrentIndex(int index, bool notify) {
@@ -27,21 +27,30 @@ class CampaignController extends GetxController implements GetxService{
     }
   }
 
-
   Future<void> getItemCampaignList(bool reload) async {
-    if (itemCampaignList == null || reload) {
+    if (_itemCampaignList == null || reload) {
       Response response = await campaignRepo.getItemCampaignList();
       if (response.statusCode == 200) {
-        itemCampaignList = [];
-        response.body.forEach((campaign) =>
-            itemCampaignList!.add(Product.fromJson(campaign)));
-        update();
+        _itemCampaignList = [];
+        try {
+          var responseBody = response.body;
+          if (responseBody != null && responseBody is List) {
+            _itemCampaignList!.addAll(responseBody
+                .map((campaign) => Product.fromJson(campaign))
+                .where((product) => product != null)
+                .cast<Product>());
+          } else {
+            print('Error: Response body is not a List: $responseBody');
+          }
+        } catch (e) {
+          print('Error parsing response body: $e');
+        }
       } else {
         ApiChecker.checkApi(response);
       }
+      update();
     }
   }
-
 
 
 }

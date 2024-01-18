@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:sixamfoodapp/theme/light_theme.dart';
 import 'package:sixamfoodapp/util/app_constants.dart';
+
 import 'helper/get_di.dart' as di;
 import 'package:sixamfoodapp/util/messages.dart';
 import 'package:sixamfoodapp/view/screens/home/home_screen.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // Ensure Flutter is initialized
+  WidgetsFlutterBinding.ensureInitialized();
 
   Map<String, Map<String, String>> languages = await di.init();
   runApp(MyApp(languages: languages));

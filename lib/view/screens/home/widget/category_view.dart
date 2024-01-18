@@ -16,7 +16,8 @@ class CategoryView extends StatelessWidget {
           const SizedBox() : Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall),
+                padding: const EdgeInsets.only(top: Dimensions.paddingSizeDefault, bottom: Dimensions.paddingSizeSmall,
+                    left: Dimensions.paddingSizeSmall, right: Dimensions.paddingSizeSmall),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -33,30 +34,22 @@ class CategoryView extends StatelessWidget {
               ),
                 Row(
                   children: [
-                    Expanded(child: SizedBox(height: 85, child: categoryController.categoryList != null ?
+                    Expanded(child: SizedBox(height: 70,child: categoryController.categoryList != null ?
                       ListView.builder(itemCount: categoryController.categoryList!.length,
-                          physics: BouncingScrollPhysics(),
+                          physics: const BouncingScrollPhysics(),
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index){
+
                           return InkWell(
                             onTap: () {},
-                            child: SizedBox(
-                              width: 60,
-                              child: Column(
-                                children: [
-                                  CustomImage(
-                                    height: 50,
-                                    width: 50,
-                                    image: '${Get.find<SplashController>().configModel?.baseUrls!.categoryImageUrl}/'
-                                        '${categoryController.categoryList![index].image}',
-
+                            child: SizedBox(width: 80,
+                              child: Column(children: [
+                                  CustomImage(height: 50, width: 50,
+                                    image: '${Get.find<SplashController>().configModel?.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image!}',
                                   ),
-
-
+                                  SizedBox(height: 5,),
                                   Text(categoryController.categoryList![index].name!,
-                                  style: robotoBold.copyWith(),),
-
-
+                                  style: robotoBold.copyWith(fontSize: Dimensions.fontSizeExtraSmall),),
                               ],
                               ),
                             ),

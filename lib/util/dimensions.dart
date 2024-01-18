@@ -6,6 +6,7 @@ class Dimensions{
 
 
 
+  static const double fontSizeExtraSmall = 10;
   static const double fontSizeSmall = 10;
   static const double fontSizeDefault = 14;
 
@@ -18,5 +19,8 @@ class Dimensions{
 
   static const double radiusSizeSmall = 10;
   static const double radiusSizeDefault = 20;
+
+  static const double containerSizeLarge = 120;
+  static const double containerSizeDefault = 80;
 
 }

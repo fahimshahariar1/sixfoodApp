@@ -19,6 +19,7 @@ class SplashController extends GetxController implements GetxService {
     bool isSuccess = false;
     if(response.statusCode == 200) {
       _configModel = ConfigModel.fromJson(response.body);
+      print('=====CatBaseUrlFromConfig====>${_configModel?.baseUrls?.categoryImageUrl}');
       isSuccess = true;
     }else {
       isSuccess = false;
