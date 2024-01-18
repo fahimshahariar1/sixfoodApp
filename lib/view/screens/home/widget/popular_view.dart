@@ -37,8 +37,9 @@ class PopularFoodView extends StatelessWidget {
               ],
             ),
           ),
+
           SizedBox(
-            height: 95,
+            height: Dimensions.paddingExtraLarge,
             child: foodList != null ? ListView.builder(
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
@@ -50,8 +51,8 @@ class PopularFoodView extends StatelessWidget {
                   child: InkWell(
                     onTap: () {},
                     child: Container(
-                      height: 90,
-                      width: 250,
+                      height: Dimensions.containerSizeMedium,
+                      width: Dimensions.containerSizeExtraLarge,
                       padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
                       decoration: BoxDecoration(
                         color: Theme.of(context).cardColor,
@@ -69,7 +70,8 @@ class PopularFoodView extends StatelessWidget {
                                 child: CustomImage(
                                   image: '${Get.find<SplashController>().configModel!.baseUrls!.productImageUrl}''/${foodList[index].image}',
 
-                                  height: 80, width: 70, fit: BoxFit.cover,
+                                  height: Dimensions.containerSizeDefault, width: Dimensions.containerSizeDefault,
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                             ],
@@ -94,8 +96,7 @@ class PopularFoodView extends StatelessWidget {
                                       (Get.find<SplashController>().configModel!.toggleVegNonVeg!)
                                           ? Image.asset(
                                         foodList[index].veg == 0 ? Images.notify : Images.placeholder,
-                                        height: 10,
-                                        width: 10,
+                                        height: Dimensions.paddingSizeSmall, width: Dimensions.paddingSizeSmall,
                                         fit: BoxFit.contain,
                                       )
                                           : const SizedBox(),

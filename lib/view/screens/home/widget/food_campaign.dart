@@ -35,19 +35,20 @@ class FoodCampaign extends StatelessWidget {
               ],
             ),
           ),
+
           Container(
-            height: 120,
+            height: Dimensions.containerSizeLarge,
             child: ListView.builder(scrollDirection: Axis.horizontal,
               itemCount: campaignController.itemCampaignList?.length ?? 0, itemBuilder: (context, index) {
                 return Container(
-                  width: 120, child: Column(
+                  width: Dimensions.containerSizeLarge, child: Column(
                     children: [
                       ClipRRect(
                         borderRadius: const BorderRadius.vertical(top: Radius.circular(Dimensions.radiusSizeSmall),
                         ),
                         child: CustomImage(
                           image:
-                          '${Get.find<SplashController>().configModel!.baseUrls!.campaignImageUrl}' +
+                          '${Get.find<SplashController>().configModel!.baseUrls!.campaignImageUrl}'
                               '/${campaignController.itemCampaignList![index].image}',
                           height: Dimensions.containerSizeDefault, width: Dimensions.containerSizeLarge, fit: BoxFit.cover,
                         ),

@@ -42,9 +42,9 @@ class CategoryView extends StatelessWidget {
 
                           return InkWell(
                             onTap: () {},
-                            child: SizedBox(width: 80,
+                            child: SizedBox(width: Dimensions.containerSizeDefault,
                               child: Column(children: [
-                                  CustomImage(height: 50, width: 50,
+                                  CustomImage(height: Dimensions.paddingSizeLarge, width: Dimensions.paddingSizeLarge,
                                     image: '${Get.find<SplashController>().configModel?.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image!}',
                                   ),
                                   SizedBox(height: 5,),
