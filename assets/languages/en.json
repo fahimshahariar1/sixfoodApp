@@ -21,7 +21,13 @@
   "restaurantAddress" : "New York, USA",
   "campaignPrice" : " ",
   "discount" : "30% off",
-  "discoutPrice" : " "
+  "discoutPrice" : " ",
+  "login" : "LogIn",
+  "first_name" : "First Name",
+  "last_name" : "Last Name",
+  "email" : "Email",
+  "select_image" : "Select Image",
+  "save" : "Save"
 
 
 }

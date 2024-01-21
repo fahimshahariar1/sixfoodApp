@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:sixamfoodapp/theme/light_theme.dart';
 import 'package:sixamfoodapp/util/app_constants.dart';
+import 'package:sixamfoodapp/view/screens/login/login_screen.dart';
 
 import 'helper/get_di.dart' as di;
 import 'package:sixamfoodapp/util/messages.dart';
@@ -35,7 +36,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Food App',
       theme: light,
-      home: const HomeScreen(),
+      home: const LoginScreen(),
     );
   }
 }

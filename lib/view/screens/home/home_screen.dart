@@ -137,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
              const CategoryView(),
             const SizedBox(height: Dimensions.paddingSizeDefault,),
              const PopularFoodView(isPopular: true,),
-             const FoodCampaign(),
+             //const FoodCampaign(),
 
 
             Padding(padding: const EdgeInsets.symmetric(
